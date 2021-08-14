@@ -1,7 +1,7 @@
 # PowerShellDevOps
 An example repository to demonstrate how to build a CI/CD workflow for PowerShell Scripts using Pester for unit testing and code coverage.
 
-There's an accompanying post on my [Blog](https://scwheele.com).
+There's an accompanying post on my [Blog](https://scwheele.com/posts/powershell-but-devops/).
 
 ## Using this module
 

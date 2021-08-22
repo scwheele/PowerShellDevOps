@@ -34,3 +34,28 @@ jobs:
         shell: pwsh
         run: |
           Invoke-Pester .\tests\*.Tests.ps1 -CodeCoverage .\MathFunctions.psm1
+
+  generate-docs:
+    name: Generate docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+      - name: Generate documentation for module
+        shell: pwsh
+        run: |
+          Install-Module platyPS
+          Import-Module platyPS
+          Import-Module .\MathFunctions.psd1
+
+          New-MarkdownHelp -Module MathFunctions -OutputFolder .\docs
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "Add changes" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}

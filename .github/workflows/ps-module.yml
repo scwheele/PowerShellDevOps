@@ -57,7 +57,7 @@ jobs:
       - name: Should push
         shell: pwsh
         run: |
-          $FilesChanged = (git diff HEAD HEAD~1 --name-only .\docs).count
+          $FilesChanged = (git diff HEAD HEAD~1 --name-only -- .\docs).count
           if($FilesChanged -gt 0) { echo "ShouldPush=true" >> $GITHUB_ENV }
       - name: Push changes
         if: env.ShouldPush == 'true'

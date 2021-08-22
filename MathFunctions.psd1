@@ -30,7 +30,7 @@ CompanyName = 'github.com/scwheele'
 Copyright = '(c) scwheele. All rights reserved.'
 
 # Description of the functionality provided by this module
-# Description = ''
+Description = 'Basic module used to demonstate CI/CD using PowerShell @ scwheele.com'
 
 # Minimum version of the PowerShell engine required by this module
 # PowerShellVersion = ''

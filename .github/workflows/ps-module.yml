@@ -48,7 +48,7 @@ jobs:
           Import-Module platyPS
           Import-Module .\MathFunctions.psd1
 
-          New-MarkdownHelp -Module MathFunctions -OutputFolder .\docs
+          Update-MarkdownHelp .\docs
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
